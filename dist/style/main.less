@@ -1,0 +1,155 @@
+@main:#8660c5;
+
+@border: #e9ebed;
+@red: #FF4040;
+
+
+body {
+    margin: 0;  
+    font:500 16px/25px Roboto,Arial,sans-serif;
+    line-height: normal;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+* {
+    box-sizing: border-box;
+    min-height: 0;
+    min-width: 0;
+}
+*:focus  {
+    outline: none;
+}
+*::-moz-selection  {
+    background: @main;
+    color: white;
+}
+*::selection  {
+    background: @main;
+    color: white;
+}
+
+input:invalid, input:invalid:-moz-submit-invalid, input:invalid:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+ul, form {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+    -webkit-transition:color 0.4s ease;
+    transition: color 0.4s ease;
+    &:hover {
+        color: @main;
+    }
+}
+
+main {
+    min-height: 70%;
+    padding: 0;
+}
+input, textarea, select, button {
+    font-family: inherit;
+}
+.flex-cols {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    .l-col {
+        -webkit-flex-basis: 300px;
+            -ms-flex-preferred-size: 300px;
+                flex-basis: 300px;
+        width: 300px;
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+    }
+    .r-col {
+        -webkit-flex-basis: 100%;
+            -ms-flex-preferred-size: 100%;
+                flex-basis: 100%;
+        padding-left: 20px;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.slick-slide {
+    height: auto;
+}
+
+.clearfix {
+    zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+@media screen and (max-width: 1300px){
+    .container {
+        width: 95%;
+    }
+}
+
+
+/*--------------Заглушка для устаревших браузеров--------------*/
+
+.ie-9 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 100;
+    .content {
+        width: 700px;
+        margin: 200px auto;
+        padding: 10px 40px 40px;
+        border: 1px solid #282828;
+        background: white;
+    }
+    li {
+        padding: 0 10px;
+        float: left;
+        width: 33%;
+    }
+    ul {
+        list-style: none;
+        &:after {
+            content:"";
+            
+        }
+    }
+    a {
+        display: block;
+        border: 1px solid @border;
+        background: #f7f7f7;
+        text-align: center;
+        padding: 10px;
+        img {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        &:hover {
+            color: blue;
+        }
+    }
+}
